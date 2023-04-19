@@ -20,4 +20,4 @@ const solveTOH = function (plates, source, helper, dest) {
 let source = 1
 let helper = 2
 let dest = 3
-solveTOH(2, source, helper, dest)
+solveTOH(4, source, helper, dest)

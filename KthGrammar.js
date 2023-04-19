@@ -14,4 +14,4 @@ function kthGrammar(n, k) {
   }
 }
 
-console.log(kthGrammar(4, 6))
+console.log(kthGrammar(1000, 8))
