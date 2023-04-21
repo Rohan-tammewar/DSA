@@ -1,23 +1,27 @@
-//Thought process
-// let say input is [1,2,3] what we will do is consider a recursion function which will be called for [1,2] and consider the another with [1,2,3] then [1] and [1,2] and so on
+//Draw recursion tree to understandclear
 
-const generateSet = function (nums, idx, op, ans) {
-  if (idx == nums.length) {
+const generateSet = function (ip, op, ans) {
+  if (ip.length == 0) {
     ans.push([...op])
     return
   }
 
-  op.push(nums[idx])
-  generateSet(nums, idx + 1, op, ans)
-  op.splice(op.length - 1)
-  //   console.log(op)
-  generateSet(nums, idx + 1, op, ans)
+  let op1 = [...op]
+  let op2 = [...op]
+  let ip1 = [...ip]
+  let ip2 = [...ip]
+
+  op2.push(ip2[0])
+  ip1.shift()
+  ip2.shift()
+
+  generateSet(ip1, op1, ans)
+  generateSet(ip2, op2, ans)
 
   return ans
 }
 
-let nums = [1, 2, 3]
+let nums = [1, 2, 3, 4]
 let op = []
-let idx = 0
 let ans = []
-console.log(generateSet(nums, idx, op, ans))
+console.log(generateSet(nums, op, ans))
